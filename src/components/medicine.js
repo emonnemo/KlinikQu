@@ -7,16 +7,19 @@ import AppBarExampleIconButton from './appbar.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TableExampleSimple from './datagrid.js'
 import TableExample from './dataObat.js'
+import TableShoppingCart from './dataShoppingCart.js'
 import TabsExampleControlled from './tab.js'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Filter from 'material-ui/svg-icons/content/filter-list';
+import ArrowForward from 'material-ui/svg-icons/navigation/arrow-forward'
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import DatePicker from 'material-ui/DatePicker';
 import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
+import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
 
 const style = {
   margin: 12,
@@ -65,13 +68,13 @@ var tab = class ObatTab extends Component {
 
 var func = function(currentMode) {
 	// console.log(document.getElementById('test').parentElement.innerHTML);
-	// console.log(tab.handleMedicineChange('addRecord'));
+	// console.log(tab.handleMedicineChange('fillDeliveryInfo'));
 	window.handleMedicineChange(currentMode)
 }
 
-var addRecord = function(currentMode) {
+var fillDeliveryInfo = function(currentMode) {
 	window.handleMedicineChange(currentMode);
-	alert('Record sukses ditambahkan');
+	alert('Pesanan Anda Berhasil Didaftarkan!');
 }
 
 var editRecord = function(currentMode) {
@@ -89,30 +92,54 @@ var forms = {
 				<div>
 					<TableExample/>
 					<FloatingActionButton onClick={() => func('filterObat')} className="float-left margin-top margin-left" backgroundColor={greenA200}><Filter/></FloatingActionButton>
-					<FloatingActionButton onClick={() => func('addRecord')} className="float-right margin-top margin-right" backgroundColor={blue500}><ContentAdd/></FloatingActionButton>
+					<FloatingActionButton onClick={() => func('shoppingCartView')} className="float-right margin-top margin-right" backgroundColor={blue500}><ShoppingCart/></FloatingActionButton>
             	</div>
             	</div>,
-    addRecord: <div>
+    shoppingCartView:
+				<div>
+        		<div className="title">
+					<br/>
+					Keranjang Belanja
+				</div>
+				<div>
+					<TableShoppingCart/>
+					<div align ="right" margin-right="10px">Total: Rp 130,000</div>
+					<br/>
+					<RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
+					<RaisedButton onClick={() => func('fillDeliveryInfo')} className='float-right margin-right margin-bottom' label="Lanjut" primary={true}/>
+            	</div>
+            	</div>,
+    fillDeliveryInfo: <div>
     			<div className="title">
     				<br/>
-    				Tambah Medical Records
+    				Informasi Pengiriman
     			</div>
     			<br/>
     			<div className='margin-left margin-right'>
-    				<div>Tanggal Record:<DatePicker autoOk='true' container='dialog' hintText="Tanggal Record" /></div>
-    				<div>Nama Penyakit:<TextField fullWidth='true' inputStyle={{margin: '10, 10, 10, 10'}}hintText=""/></div>
-    				<div>Nama Dokter:</div><TextField hintText=""/>
-    				<div>Durasi Sakit:<TextField style={{width: 100}} hintText=""/>
-				        <DropDownMenu value={1} onChange={this.handleMedicineChange}>
-				          <MenuItem value={1} primaryText="Hari" />
-				          <MenuItem value={2} primaryText="Minggu" />
-				          <MenuItem value={3} primaryText="Bulan" />
-				        </DropDownMenu>
-	        		</div>
-	        		Keterangan: <TextField multiLine={true} rows='4' rowsMax='4' hintText=""/>
-	    			</div>
-				    <RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
-					<RaisedButton onClick={() => addRecord('obatView')} className='float-right margin-right margin-bottom' label="Tambah" primary={true}/>
+    				<table>
+    					<tr>
+    						<td>Nama: </td>
+    						<td><TextField  hintText=""/></td>
+    					</tr>
+    					<tr>
+    						<td>Alamat: </td>
+    						<td><TextField multiLine={true} rows='4' rowsMax='4' hintText=""/></td>
+    					</tr>
+    					<tr>
+    						<td>No Telepon: </td>
+    						<td><TextField  hintText=""/></td>
+    					</tr>
+    					<tr>
+    						<td>
+    							<br/>
+    						</td>
+    					</tr>
+	        		</table>
+	        		<div align="right">Biaya Antar: Rp 5,000 </div>
+	    		</div>
+	    		<br/>
+				    <RaisedButton onClick={() => func('shoppingCartView')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
+					<RaisedButton onClick={() => fillDeliveryInfo('obatView')} className='float-right margin-right margin-bottom' label="Pesan" primary={true}/>
 	    		</div>,
 	filterObat: <div>
     			<div className="title">
@@ -120,12 +147,19 @@ var forms = {
     				Filter By
     			</div>
     			<br/>
-    			<div>Kategori Obat:
-				        <DropDownMenu value={1} onChange={this.handleMedicineChange}>
-				          <MenuItem value={1} primaryText="Antibiotik" />
-				          <MenuItem value={2} primaryText="Komplemen" />
-				          <MenuItem value={3} primaryText="Supplemen" />
-				        </DropDownMenu>
+    			<div>
+    				<table>
+    					<tr>
+    						<td>Kategori Obat:</td>
+				        	<td>
+				        		<DropDownMenu value={1} onChange={this.handleMedicineChange}>
+				          			<MenuItem value={1} primaryText="Antibiotik" />
+				          			<MenuItem value={2} primaryText="Komplemen" />
+				          			<MenuItem value={3} primaryText="Supplemen" />
+				        		</DropDownMenu>
+				        	</td>
+				        </tr>
+				    </table>
 				</div>
 				    <RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
 					<RaisedButton onClick={() => func('obatView')} className='float-right margin-right margin-bottom' label="Filter" primary={true}/>

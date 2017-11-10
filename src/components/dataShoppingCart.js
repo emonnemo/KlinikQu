@@ -17,45 +17,13 @@ const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
 const tableData = [
 {
   nama: 'Obat A',
-  deskripsi: 'Meredakan Demam',
-  syarat: 'Antibiotik - 3x Sehari, Setelah Makan',
+  jumlah: '1',
   harga: 'Rp. 30,000',
 },
 {
   nama: 'Obat B',
-  deskripsi: 'Meredakan Batuk dan Radang Tenggorokkan',
-  syarat: 'Antibiotik - 3x Sehari, Sebelum Makan',
-  harga: 'Rp. 50,000',
-},
-{
-  nama: 'Obat C',
-  deskripsi: 'Meredakan Pilek dan Sakit Kepala',
-  syarat: 'Komplemen - 1x Sehari, Setelah Makan',
-  harga: 'Rp. 65,000',
-},
-{
-  nama: 'Obat D',
-  deskripsi: 'Meningkatkan Asupan Vitamin C Keseharian',
-  syarat: 'Suplemen - 1x Sehari, Setelah Makan',
+  jumlah: '2',
   harga: 'Rp. 100,000',
-},
-{
-  nama: 'Obat E',
-  deskripsi: 'Meningkatkan Asupan Vitamin B1 Keseharian',
-  syarat: 'Suplemen - 1x Sehari, Setelah Makan',
-  harga: 'Rp. 90,000',
-},
-{
-  nama: 'Obat F',
-  deskripsi: 'Meningkatkan Asupan Vitamin B3 Keseharian',
-  syarat: 'Suplemen - 1x Sehari, Setelah Makan',
-  harga: 'Rp. 95,000',
-},
-{
-  nama: 'Obat G',
-  deskripsi: 'Meningkatkan Asupan Vitamin B6 Keseharian',
-  syarat: 'Suplemen - 1x Sehari, Setelah Makan',
-  harga: 'Rp. 80,000',
 },
 ];
 
@@ -63,15 +31,20 @@ const tableData = [
  * A simple table demonstrating the hierarchy of the `Table` component and its sub-components.
  */
 
-class TableExample extends Component {
+class TableShoppingCart extends Component {
   constructor(props) {
     super(props);
   }
   editDelete(row, column) {
     if (column == '4') {
       //eslint-disable-next-line
-      if (confirm('Tambahkan ke dalam keranjang?')) {
+      if (confirm('Tambahkan jumlah obat ke dalam keranjang?')) {
         alert('Obat berhasil ditambahkan');
+      }
+    } else if (column == '5') {
+      //eslint-disable-next-line
+      if (confirm('Kurangi jumlah obat dalam keranjang?')) {
+        alert('Obat berhasil dikurangkan');
       }
     }
   }
@@ -88,11 +61,12 @@ class TableExample extends Component {
           adjustForCheckbox={false}
           selectable={false}>
           <TableRow>
-            <TableHeaderColumn className="first-column">Nama Obat</TableHeaderColumn>
-            <TableHeaderColumn className="second-column">Deskripsi</TableHeaderColumn>
-            <TableHeaderColumn className="third-column">Keterangan</TableHeaderColumn>
+            <TableHeaderColumn className="first-column">No</TableHeaderColumn>
+            <TableHeaderColumn className="second-column">Nama Obat</TableHeaderColumn>
+            <TableHeaderColumn className="third-column">Jumlah</TableHeaderColumn>
             <TableHeaderColumn className="fourth-column">Harga</TableHeaderColumn>
             <TableHeaderColumn className="fifth-column"></TableHeaderColumn>
+            <TableHeaderColumn className="sixth-column"></TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody
@@ -101,11 +75,12 @@ class TableExample extends Component {
           selectable={false}>
           {tableData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="first-column">{row.nama}</TableRowColumn>
-              <TableRowColumn className="second-column">{row.deskripsi}</TableRowColumn>
-              <TableRowColumn className="third-column">{row.syarat}</TableRowColumn>
+              <TableRowColumn className="first-column">{index+1}</TableRowColumn>
+              <TableRowColumn className="second-column">{row.nama}</TableRowColumn>
+              <TableRowColumn className="third-column">{row.jumlah}</TableRowColumn>
               <TableRowColumn className="fourth-column">{row.harga}</TableRowColumn>
               <TableRowColumn className="fifth-column">+</TableRowColumn>
+              <TableRowColumn className="sixth-column">-</TableRowColumn>
             </TableRow>
           ))}
         </TableBody>
@@ -114,4 +89,4 @@ class TableExample extends Component {
   }
 }
 
-export default TableExample;
+export default TableShoppingCart;
