@@ -7,6 +7,7 @@ import '../img/flaticon.css';
 import '../App.css';
 import MedicalTab from './medical.js'
 import ObatTab from './medicine.js'
+import Examination from './regist_examination.js'
 
 const scheduleIcon = <FontIcon className="flaticon-calendar-interface-symbol-tool"></FontIcon>;
 const medicineIcon = <FontIcon className="flaticon-medical-kit"></FontIcon>;
@@ -62,11 +63,11 @@ export default class TabsExampleControlled extends React.Component {
             <MedicalTab/>
           </div>
         </Tab>
-        <Tab icon={registerIcon} label="Register" value="RegisterTab">
+        <Tab icon={registerIcon} label="Tab Register" value="ExaminationTab">
           <div>
-            <h2 style={styles.headline}>Controllable Tab B</h2>
+            <h2 style={styles.headline}>Controllable Tab D</h2>
             <p>
-              Register Tab
+              <Examination/>
             </p>
           </div>
         </Tab>
