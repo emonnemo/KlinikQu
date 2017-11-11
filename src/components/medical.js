@@ -16,6 +16,7 @@ import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
+import DropDownMenuOpenImmediateExample from './dropmenu.js'
 
 const style = {
   margin: 12,
@@ -102,11 +103,7 @@ var forms = {
     				<div>Nama Penyakit:<TextField fullWidth='true' inputStyle={{margin: '10, 10, 10, 10'}}hintText=""/></div>
     				<div>Nama Dokter:</div><TextField hintText=""/>
     				<div>Durasi Sakit:<TextField style={{width: 100}} hintText=""/>
-				        <DropDownMenu value={1} onChange={this.handleChange}>
-				          <MenuItem value={1} primaryText="Hari" />
-				          <MenuItem value={2} primaryText="Minggu" />
-				          <MenuItem value={3} primaryText="Bulan" />
-				        </DropDownMenu>
+    					<DropDownMenuOpenImmediateExample/>
 	        		</div>
 	        		Keterangan: <TextField multiLine={true} rows='4' rowsMax='4' hintText=""/>
 	    			</div>
