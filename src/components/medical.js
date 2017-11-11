@@ -106,7 +106,7 @@ var forms = {
     				</tr>
     				<tr>
     					<td>Nama Penyakit: </td>
-    					<td><TextField fullWidth='true' inputStyle={{margin: '10, 10, 10, 10'}}hintText=""/></td>
+    					<td><TextField fullWidth='true' inputStyle={{width : 200, margin: '10, 10, 10, 10'}}hintText=""/></td>
     				</tr>
     				<tr>
 						<td>Nama Dokter: </td>
@@ -115,9 +115,6 @@ var forms = {
 					<tr>
     					<td>Durasi Sakit: </td>
     					<td><TextField hintText=""/></td>
-    					<td>
-    						<DropDownMenuOpenImmediateExample/>
-				        </td>
 				    </tr>
 				    <tr>
 				    	<td>Keterangan: </td>
@@ -167,17 +164,28 @@ var forms = {
     			</div>
     			<br/>
     			<div className='margin-left margin-right'>
-    				<div>Tanggal Record:<DatePicker autoOk='true' container='dialog' hintText="Tanggal Record" /></div>
-    				<div>Nama Penyakit:<TextField fullWidth='true' inputStyle={{margin: '10, 10, 10, 10'}}hintText=""/></div>
-    				<div>Nama Dokter:</div><TextField hintText=""/>
-    				<div>Durasi Sakit:<TextField style={{width: 100}} hintText=""/>
-				        <DropDownMenu value={1} onChange={this.handleChange}>
-				          <MenuItem value={1} primaryText="Hari" />
-				          <MenuItem value={2} primaryText="Minggu" />
-				          <MenuItem value={3} primaryText="Bulan" />
-				        </DropDownMenu>
-	        		</div>
-	        		Keterangan: <TextField multiLine={true} rows='4' rowsMax='4' hintText=""/>
+    				<table>
+    				<tr>
+    					<td>Tanggal Record: </td>
+    					<td><DatePicker autoOk='true' container='dialog'  hintText="Tanggal Record" /></td>
+    				</tr>
+    				<tr>
+    					<td>Nama Penyakit: </td>
+    					<td><TextField fullWidth='true' value='Demam' inputStyle={{width : 200, margin: '10, 10, 10, 10'}}hintText=""/></td>
+    				</tr>
+    				<tr>
+						<td>Nama Dokter: </td>
+						<td><TextField value='Dr. A' hintText=""/></td>
+					</tr>
+					<tr>
+    					<td>Durasi Sakit: </td>
+    					<td><TextField value='5 hari' hintText=""/></td>
+				    </tr>
+				    <tr>
+				    	<td>Keterangan: </td>
+				    	<td><TextField value='demam tinggi sudah 5 hari, tidak napsu makan' multiLine={true} rows='4' rowsMax='4' hintText=""/></td>
+	    			</tr>
+	    			</table>
 	    			</div>
 				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
 					<RaisedButton onClick={() => editRecord('medRecord1')} className='float-right margin-right margin-bottom' label="Ubah" primary={true}/>
