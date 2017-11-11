@@ -6,6 +6,8 @@ import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import '../img/flaticon.css';
 import '../App.css';
 import MedicalTab from './medical.js'
+import ObatTab from './medicine.js'
+import Examination from './regist_examination.js'
 
 const scheduleIcon = <FontIcon className="flaticon-calendar-interface-symbol-tool"></FontIcon>;
 const medicineIcon = <FontIcon className="flaticon-medical-kit"></FontIcon>;
@@ -27,7 +29,7 @@ export default class TabsExampleControlled extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'RecordsTab',
+      value: 'MedicineTab',
     };
   }
 
@@ -53,10 +55,7 @@ export default class TabsExampleControlled extends React.Component {
         </Tab>
         <Tab icon={medicineIcon} label="Medicine" value="MedicineTab">
           <div>
-            <h2 style={styles.headline}>Controllable Tab B</h2>
-            <p>
-              Medicine Tab
-            </p>
+            <ObatTab/>
           </div>
         </Tab>
         <Tab icon={recordsIcon} label="Records" value="RecordsTab">
@@ -64,12 +63,9 @@ export default class TabsExampleControlled extends React.Component {
             <MedicalTab/>
           </div>
         </Tab>
-        <Tab icon={registerIcon} label="Register" value="RegisterTab">
+        <Tab icon={registerIcon} label="Tab Register" value="ExaminationTab">
           <div>
-            <h2 style={styles.headline}>Controllable Tab B</h2>
-            <p>
-              Register Tab
-            </p>
+            <Examination/>
           </div>
         </Tab>
       </Tabs>

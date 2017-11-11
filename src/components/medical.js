@@ -35,8 +35,8 @@ var tab = class MedicalTab extends Component {
 		this.state={
 			view: forms['medRecord1']
 		}
-		this.handleChange = this.handleChange.bind(this);
-		window.handleChange = this.handleChange;
+		this.handleChangeRecord = this.handleChangeRecord.bind(this);
+		window.handleChangeRecord = this.handleChangeRecord;
 		this.editRecord = this.editRecord.bind(this);
 		window.editRecord = this.editRecord;
 	}
@@ -46,10 +46,10 @@ var tab = class MedicalTab extends Component {
 	}
 
 	editRecord(currentMode) {
-		this.handleChange(currentMode);
+		this.handleChangeRecord(currentMode);
 	}
 
-	handleChange(currentMode) {
+	handleChangeRecord(currentMode) {
 		console.log('masuk ga bung');
 		this.setState({
 			view: forms[currentMode],
@@ -66,16 +66,16 @@ var tab = class MedicalTab extends Component {
 var func = function(currentMode) {
 	// console.log(document.getElementById('test').parentElement.innerHTML);
 	// console.log(tab.handleChange('addRecord'));
-	window.handleChange(currentMode)
+	window.handleChangeRecord(currentMode)
 }
 
 var addRecord = function(currentMode) {
-	window.handleChange(currentMode);
+	window.handleChangeRecord(currentMode);
 	alert('Record sukses ditambahkan');
 }
 
 var editRecord = function(currentMode) {
-	window.handleChange(currentMode);
+	window.handleChangeRecord(currentMode);
 	alert('Record sukses diubah');
 }
 
@@ -99,13 +99,31 @@ var forms = {
     			</div>
     			<br/>
     			<div className='margin-left margin-right'>
-    				<div>Tanggal Record:<DatePicker autoOk='true' container='dialog' hintText="Tanggal Record" /></div>
-    				<div>Nama Penyakit:<TextField fullWidth='true' inputStyle={{margin: '10, 10, 10, 10'}}hintText=""/></div>
-    				<div>Nama Dokter:</div><TextField hintText=""/>
-    				<div>Durasi Sakit:<TextField style={{width: 100}} hintText=""/>
-    					<DropDownMenuOpenImmediateExample/>
-	        		</div>
-	        		Keterangan: <TextField multiLine={true} rows='4' rowsMax='4' hintText=""/>
+    				<table>
+    				<tr>
+    					<td>Tanggal Record: </td>
+    					<td><DatePicker autoOk='true' container='dialog' hintText="Tanggal Record" /></td>
+    				</tr>
+    				<tr>
+    					<td>Nama Penyakit: </td>
+    					<td><TextField fullWidth='true' inputStyle={{margin: '10, 10, 10, 10'}}hintText=""/></td>
+    				</tr>
+    				<tr>
+						<td>Nama Dokter: </td>
+						<td><TextField hintText=""/></td>
+					</tr>
+					<tr>
+    					<td>Durasi Sakit: </td>
+    					<td><TextField hintText=""/></td>
+    					<td>
+    						<DropDownMenuOpenImmediateExample/>
+				        </td>
+				    </tr>
+				    <tr>
+				    	<td>Keterangan: </td>
+				    	<td><TextField multiLine={true} rows='4' rowsMax='4' hintText=""/></td>
+	    			</tr>
+	    			</table>
 	    			</div>
 				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
 					<RaisedButton onClick={() => addRecord('medRecord1')} className='float-right margin-right margin-bottom' label="Tambah" primary={true}/>
@@ -117,8 +135,16 @@ var forms = {
     			</div>
     			<br/>
     			<div className='margin-left margin-right'>
-    				<div>Tanggal mulai:<DatePicker autoOk='true' container='dialog' hintText="Tanggal mulai" /></div>
-    				<div>Tanggal akhir:<DatePicker autoOk='true' container='dialog' hintText="Tanggal akhir" /></div>
+    				<table>
+    					<tr>
+    						<td>Tanggal mulai:</td>
+    						<td><DatePicker autoOk='true' container='dialog' hintText="Tanggal mulai" /></td>
+    					</tr>
+    					<tr>
+    						<td>Tanggal akhir:</td>
+    						<td><DatePicker autoOk='true' container='dialog' hintText="Tanggal akhir" /></td>
+    					</tr>
+    				</table>
     			</div>
 				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
 					<RaisedButton onClick={() => func('filterRecord1')} className='float-right margin-right margin-bottom' label="Filter" primary={true}/>
