@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import FontIcon from 'material-ui/FontIcon';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+import { blue500, red500, blue50, green300, green400, green500 } from 'material-ui/styles/colors';
 import BottomNavigationExampleSimple from './bottomnavbar.js';
 import AppBarExampleIconButton from './appbar.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -88,7 +88,7 @@ var forms = {
 				</div>
 				<div>
 					<TableExampleSimple/>
-					<FloatingActionButton onClick={() => func('filterRecord')} className="float-left margin-top margin-left" backgroundColor={greenA200}><Filter/></FloatingActionButton>
+					<FloatingActionButton onClick={() => func('filterRecord')} className="float-left margin-top margin-left" backgroundColor={green500}><Filter/></FloatingActionButton>
 					<FloatingActionButton onClick={() => func('addRecord')} className="float-right margin-top margin-right" backgroundColor={blue500}><ContentAdd/></FloatingActionButton>
             	</div>
             	</div>,
@@ -122,8 +122,8 @@ var forms = {
 	    			</tr>
 	    			</table>
 	    			</div>
-				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
-					<RaisedButton onClick={() => addRecord('medRecord1')} className='float-right margin-right margin-bottom' label="Tambah" primary={true}/>
+				    <RaisedButton onClick={() => func('medRecord1')} backgroundColor={red500} className='float-left margin-left margin-bottom' label="Kembali"/>
+					<RaisedButton onClick={() => addRecord('medRecord1')} className='float-right margin-right margin-bottom' backgroundColor={green500} label="Tambah"/>
 	    		</div>,
 	filterRecord: <div>
     			<div className="title">
@@ -143,8 +143,8 @@ var forms = {
     					</tr>
     				</table>
     			</div>
-				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
-					<RaisedButton onClick={() => func('filterRecord1')} className='float-right margin-right margin-bottom' label="Filter" primary={true}/>
+				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' backgroundColor={red500} label="Kembali"/>
+					<RaisedButton onClick={() => func('filterRecord1')} className='float-right margin-right margin-bottom' backgroundColor={green500} label="Filter"/>
 				</div>,
 	filterRecord1:
 				<div>
@@ -154,7 +154,7 @@ var forms = {
 				</div>
 				<div>
 					<TableExampleSimple/>
-					<FloatingActionButton onClick={() => func('medRecord1')} className="float-left margin-top margin-left" backgroundColor={greenA200}><ArrowBack/></FloatingActionButton>
+					<FloatingActionButton onClick={() => func('medRecord1')} className="float-left margin-top margin-left" backgroundColor={green500}><ArrowBack/></FloatingActionButton>
             	</div>
             	</div>,
     editRecord: <div>
@@ -187,8 +187,8 @@ var forms = {
 	    			</tr>
 	    			</table>
 	    			</div>
-				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
-					<RaisedButton onClick={() => editRecord('medRecord1')} className='float-right margin-right margin-bottom' label="Ubah" primary={true}/>
+				    <RaisedButton onClick={() => func('medRecord1')} className='float-left margin-left margin-bottom' backgroundColor={red500} label="Kembali"/>
+					<RaisedButton onClick={() => editRecord('medRecord1')} className='float-right margin-right margin-bottom' label="Ubah" backgroundColor={green500}/>
 	    		</div>,
 }
 

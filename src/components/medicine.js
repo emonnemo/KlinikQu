@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import FontIcon from 'material-ui/FontIcon';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+import {blue500, red500, greenA200, green500} from 'material-ui/styles/colors';
 import BottomNavigationExampleSimple from './bottomnavbar.js';
 import AppBarExampleIconButton from './appbar.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -105,8 +105,8 @@ var forms = {
 					<TableShoppingCart/>
 					<div align ="right" margin-right="10px">Total: Rp 130,000</div>
 					<br/>
-					<RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
-					<RaisedButton onClick={() => func('fillDeliveryInfo')} className='float-right margin-right margin-bottom' label="Lanjut" primary={true}/>
+					<RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' backgroundColor={red500} label="Kembali"/>
+					<RaisedButton onClick={() => func('fillDeliveryInfo')} className='float-right margin-right margin-bottom' backgroundColor={green500} label="Lanjut"/>
             	</div>
             	</div>,
     fillDeliveryInfo: <div>
@@ -138,8 +138,8 @@ var forms = {
 	        		<div align="right">Biaya Antar: Rp 5,000 </div>
 	    		</div>
 	    		<br/>
-				    <RaisedButton onClick={() => func('shoppingCartView')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
-					<RaisedButton onClick={() => fillDeliveryInfo('obatView')} className='float-right margin-right margin-bottom' label="Pesan" primary={true}/>
+				    <RaisedButton onClick={() => func('shoppingCartView')} className='float-left margin-left margin-bottom' backgroundColor={red500} label="Kembali"/>
+					<RaisedButton onClick={() => fillDeliveryInfo('obatView')} className='float-right margin-right margin-bottom' backgroundColor={green500} label="Pesan"/>
 	    		</div>,
 	filterObat: <div>
     			<div className="title">
@@ -161,8 +161,8 @@ var forms = {
 				        </tr>
 				    </table>
 				</div>
-				    <RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
-					<RaisedButton onClick={() => func('obatView')} className='float-right margin-right margin-bottom' label="Filter" primary={true}/>
+				    <RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' backgroundColor={red500} label="Kembali"/>
+					<RaisedButton onClick={() => func('obatView')} className='float-right margin-right margin-bottom' label="Filter" backgroundColor={green500}/>
 				</div>,
 
 	filterRecord1:
@@ -195,8 +195,8 @@ var forms = {
 	        		</div>
 	        		Keterangan: <TextField multiLine={true} rows='4' rowsMax='4' hintText=""/>
 	    			</div>
-				    <RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' label="Kembali" primary={true}/>
-					<RaisedButton onClick={() => editRecord('obatView')} className='float-right margin-right margin-bottom' label="Ubah" primary={true}/>
+				    <RaisedButton onClick={() => func('obatView')} className='float-left margin-left margin-bottom' backgroundColor={red500} label="Kembali"/>
+					<RaisedButton onClick={() => editRecord('obatView')} className='float-right margin-right margin-bottom' backgroundColor={green500} label="Ubah"/>
 	    		</div>,
 }
 
