@@ -65,10 +65,7 @@ export default class TabsExampleControlled extends React.Component {
         </Tab>
         <Tab icon={registerIcon} label="Tab Register" value="ExaminationTab">
           <div>
-            <h2 style={styles.headline}>Controllable Tab D</h2>
-            <p>
-              <Examination/>
-            </p>
+            <Examination/>
           </div>
         </Tab>
       </Tabs>
