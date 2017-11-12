@@ -8,7 +8,7 @@ import '../App.css';
 import MedicalTab from './medical.js'
 import ScheduleTab from './schedule.js'
 import ObatTab from './medicine.js'
-import Examination from './regist_examination.js'
+import RegisterTab from './regist_examination.js'
 
 const scheduleIcon = <FontIcon className="flaticon-calendar-interface-symbol-tool"></FontIcon>;
 const medicineIcon = <FontIcon className="flaticon-medical-kit"></FontIcon>;
@@ -69,9 +69,9 @@ export default class TabsExampleControlled extends React.Component {
             <MedicalTab/>
           </div>
         </Tab>
-        <Tab icon={registerIcon} label="Tab Register" value="ExaminationTab">
+        <Tab icon={registerIcon} label="Register" value="RegisterTab">
           <div>
-            <Examination/>
+            <RegisterTab/>
           </div>
         </Tab>
       </Tabs>
