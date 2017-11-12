@@ -7,7 +7,7 @@ import AppBarExampleIconButton from './appbar.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ScheduleByDayTable from './dataScheduleDay.js'
 import ScheduleByDoctorTable from './dataScheduleDoctor.js'
-import Welcome from './coba.js'
+
 import TabsExampleControlled from './tab.js'
 import RaisedButton from 'material-ui/RaisedButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';

@@ -6,6 +6,7 @@ import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import '../img/flaticon.css';
 import '../App.css';
 import MedicalTab from './medical.js'
+import ScheduleTab from './schedule.js'
 import ObatTab from './medicine.js'
 import Examination from './regist_examination.js'
 
@@ -52,10 +53,9 @@ export default class TabsExampleControlled extends React.Component {
         className='tab-bar'
       >
         <Tab icon={scheduleIcon} label="Schedule" value="ScheduleTab">
-          <div style={styles.content}>
-            <h2 style={styles.headline}>Controllable Tab A</h2>
+          <div>
             <p>
-              Schedule Tab
+              <ScheduleTab/>
             </p>
           </div>
         </Tab>

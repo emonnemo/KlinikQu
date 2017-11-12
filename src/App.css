@@ -108,3 +108,20 @@
 .orange {
   color: orange;
 }
+
+.schedule1 {
+  width:10%;
+}
+.schedule2 {
+  width:40%;
+}
+.schedule3 {
+  width:40%;
+}
+.schedule4 {
+  width:20%;
+}
+
+.scheduleShowBy {
+  padding: 5px;
+}
