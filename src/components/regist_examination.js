@@ -80,8 +80,10 @@ var forms = {
     </div>,
   register:
     <div style={{ margin: 'auto' }}>
-      <br />
-      <div className="pageTitle" style={{ margin: 'auto', fontSize: '20pt', fontWeight: 'bold', textAlign: 'center' }} >Pendaftaran Pemeriksaan</div>
+      <div className="title">
+        <br />
+        Pendaftaran Pemeriksaan
+			</div>
       <br />
       <div className="section float-left margin-left" style={{fontSize: '16pt'}}>Pilih Jadwal</div> 
       <br />
@@ -113,8 +115,10 @@ var forms = {
     </div>,
   queue_info1:
     <div style={{ margin: 'auto' }}>
-      <br />
-      <div className="pageTitle" style={{ margin: 'auto', fontSize: '20pt', fontWeight: 'bold', textAlign: 'center' }} >Pendaftaran Pemeriksaan</div>
+      <div className="title">
+        <br />
+        Pendaftaran Pemeriksaan
+			</div>
       <br />
       <div className="section float-left margin-left" style={{ fontSize: '16pt' }}>Pilih Jadwal</div>
       <br />
@@ -157,8 +161,10 @@ var forms = {
     </div>,
   queue_info2:
     <div style={{ margin: 'auto' }}>
-      <br />
-      <div className="pageTitle" style={{ margin: 'auto', fontSize: '20pt', fontWeight: 'bold', textAlign: 'center' }} >Pendaftaran Pemeriksaan</div>
+      <div className="title">
+        <br />
+        Pendaftaran Pemeriksaan
+			</div>
       <br />
       <div className="section float-left margin-left" style={{ fontSize: '16pt' }}>Pilih Jadwal</div>
       <br />
