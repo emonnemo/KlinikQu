@@ -68,10 +68,26 @@ class TableExample extends Component {
     super(props);
   }
   editDelete(row, column) {
-    if (column == '4') {
+    if (column == '2') {
       //eslint-disable-next-line
       if (confirm('Tambahkan ke dalam keranjang?')) {
         alert('Obat berhasil ditambahkan');
+      }
+    } else if (column == '0') {
+      if (row == '0') {
+        alert('Obat A, \n Meredakan Demam, \n Antibiotik - 3x Sehari, Setelah Makan');
+      } else if (row == '1') {
+        alert('Obat B, \n Meredakan Batuk dan Radang Tenggorokkan, \n Antibiotik - 3x Sehari, Sebelum Makan');
+      } else if (row == '2') {
+        alert('Obat C, \n Meredakan Pilek dan Sakit Kepala, \n Komplemen - 1x Sehari, Setelah Makan');
+      } else if (row == '3') {
+        alert('Obat D, \n Meningkatkan Asupan Vitamin C Keseharian, \n Suplemen - 1x Sehari, Setelah Makan');
+      } else if (row == '4') {
+        alert('Obat E, \n Meningkatkan Asupan Vitamin B1 Keseharian, \n Suplemen - 1x Sehari, Setelah Makan');
+      } else if (row == '5') {
+        alert('Obat F, \n Meningkatkan Asupan Vitamin B3 Keseharian, \n Suplemen - 1x Sehari, Setelah Makan');
+      } else if (row == '6') {
+        alert('Obat G, \n Meningkatkan Asupan Vitamin B6 Keseharian, \n Suplemen - 1x Sehari, Setelah Makan');
       }
     }
   }
@@ -79,6 +95,7 @@ class TableExample extends Component {
     return (
       <Table
         height={250}
+        width={200}
         fixedHeader={true}
         fixedFooter={true}
         onCellClick={this.editDelete}
@@ -88,24 +105,21 @@ class TableExample extends Component {
           adjustForCheckbox={false}
           selectable={false}>
           <TableRow>
-            <TableHeaderColumn className="first-column">Nama Obat</TableHeaderColumn>
-            <TableHeaderColumn className="second-column">Deskripsi</TableHeaderColumn>
-            <TableHeaderColumn className="third-column">Keterangan</TableHeaderColumn>
-            <TableHeaderColumn className="fourth-column">Harga</TableHeaderColumn>
-            <TableHeaderColumn className="fifth-column"></TableHeaderColumn>
+            <TableHeaderColumn style={{width:5}} className="first-column">Obat</TableHeaderColumn>
+            <TableHeaderColumn style={{width:5}} className="fourth-column">Harga</TableHeaderColumn>
+            <TableHeaderColumn style={{width:5}} className="fifth-column"></TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody
           displayRowCheckbox={false}
           stripedRows={true}
-          selectable={false}>
+          selectable={false}
+          style={{tableLayout: 'auto'}}>
           {tableData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="first-column">{row.nama}</TableRowColumn>
-              <TableRowColumn className="second-column">{row.deskripsi}</TableRowColumn>
-              <TableRowColumn className="third-column">{row.syarat}</TableRowColumn>
-              <TableRowColumn className="fourth-column">{row.harga}</TableRowColumn>
-              <TableRowColumn className="fifth-column">+</TableRowColumn>
+              <TableRowColumn style={{width:5}} className="first-column">{row.nama}</TableRowColumn>
+              <TableRowColumn style={{width:5}} className="fourth-column">{row.harga}</TableRowColumn>
+              <TableRowColumn style={{width:5}} className="fifth-column">+</TableRowColumn>
             </TableRow>
           ))}
         </TableBody>
