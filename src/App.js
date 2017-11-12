@@ -14,8 +14,8 @@ class App extends Component {
     return (
       <div className="App">
         <MuiThemeProvider>
-        <div>
-          <AppBarExampleIconButton className='fixed-top'/>
+        <div style={{height: window.innerHeight}}>
+          <AppBarExampleIconButton className='fixed-top app-bar'/>
           <TabsExampleControlled/>
         </div>
         </MuiThemeProvider>

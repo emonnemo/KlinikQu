@@ -22,6 +22,11 @@ const styles = {
     marginBottom: 12,
     fontWeight: 400,
   },
+  content: {
+    height: window.innerHeight - (50+72),
+    overflow: 'scroll',
+    bottom: 0,
+  }
 };
 
 export default class TabsExampleControlled extends React.Component {
@@ -44,9 +49,10 @@ export default class TabsExampleControlled extends React.Component {
       <Tabs
         value={this.state.value}
         onChange={this.handleChange}
+        className='tab-bar'
       >
         <Tab icon={scheduleIcon} label="Schedule" value="ScheduleTab">
-          <div>
+          <div style={styles.content}>
             <h2 style={styles.headline}>Controllable Tab A</h2>
             <p>
               Schedule Tab
