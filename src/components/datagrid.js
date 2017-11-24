@@ -87,7 +87,7 @@ class TableExampleSimple extends Component {
               <TableRowColumn className="first-column">{index+1}</TableRowColumn>
               <TableRowColumn className="second-column">{row.tanggal}</TableRowColumn>
               <TableRowColumn className="third-column">{row.penyakit}</TableRowColumn>
-              <TableRowColumn className="fourth-column"><FontIcon className="flaticon-edit-pencil-button orange"></FontIcon></TableRowColumn>
+              <TableRowColumn className="fourth-column"><span class="glyphicon glyphicon-arrow-down"></span></TableRowColumn>
               <TableRowColumn className="fifth-column">d</TableRowColumn>
             </TableRow>
           ))}

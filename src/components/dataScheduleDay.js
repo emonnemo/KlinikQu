@@ -10,71 +10,73 @@ import {
 import FontIcon from 'material-ui/FontIcon';
 import '../img/flaticon.css';
 import '../App.css'
+import AddIcon from 'material-ui/svg-icons/content/add-box'
+import { blue500, red500, blue50, green300, green400, green500 } from 'material-ui/styles/colors';
 
 const editIcon = <FontIcon className="flaticon-edit-pencil-button orange"></FontIcon>;
 const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
 
 const seninData = [
 {
-    dokter: 'dr. Aaa aaaa aaaaaa',
+    dokter: 'dr. Alice',
     jam: '08.00-12.00 , 15.00-17.00',
 },
 {
-    dokter: 'dr. Bbb bbbbb',
+    dokter: 'dr. Bob',
     jam: '13.00-15.00',
 }
 ];
 const selasaData = [
 {
-    dokter: 'dr. Aaa aaaa aaaaaa',
+    dokter: 'dr. Alice',
     jam: '08.00-12.00 , 15.00-17.00',
 },
 {
-    dokter: 'dr. Bbb bbbbb',
+    dokter: 'dr. Bob',
     jam: '15.00-18.00',
 }
 ];
 const rabuData = [
 {
-    dokter: 'dr. Aaa aaaa aaaaaa',
+    dokter: 'dr. Alice',
     jam: '12.00-17.00',
 },
 {
-    dokter: 'drg. Gggg gggg',
+    dokter: 'drg. Grace',
     jam: '16.00-20.00',
 }
 ];
 const kamisData = [
 {
-    dokter: 'dr. Bbb bbbbbb',
+    dokter: 'dr. Bob',
     jam: '08.00-12.00',
 },
 {
-    dokter: 'dr. Cccc cccc',
+    dokter: 'dr. Carol',
     jam: '15.00-20.00',
 }
 ];
 const jumatData = [
 {
-    dokter: 'dr. Cccc cccc',
+    dokter: 'dr. Carol',
     jam: '08.00-12.00',
 },
 {
-    dokter: 'drg. Gggg gggg',
+    dokter: 'drg. Grace',
     jam: '16.00-20.00',
 },
 {
-    dokter: 'dr. Dddd ddddd',
+    dokter: 'dr. Dave',
     jam: '15.00-20.00',
 }
 ];
 const sabtuData = [
 {
-    dokter: 'dr. Ccccc cccc',
+    dokter: 'dr. Carol',
     jam: '08.00-12.00',
 },
 {
-    dokter: 'dr. Dddd ddddd',
+    dokter: 'dr. Dave',
     jam: '15.00-20.00',
 }
 ];
@@ -111,7 +113,7 @@ class ScheduleByDayTable extends Component {
               <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
               <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-              <TableRowColumn className="schedule4">+</TableRowColumn>
+              <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="selasa" &&
@@ -120,7 +122,7 @@ class ScheduleByDayTable extends Component {
                <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
                <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
                <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-               <TableRowColumn className="schedule4">+</TableRowColumn>
+               <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="rabu" &&
@@ -129,7 +131,7 @@ class ScheduleByDayTable extends Component {
               <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
               <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-              <TableRowColumn className="schedule4">+</TableRowColumn>
+              <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="kamis" &&
@@ -138,7 +140,7 @@ class ScheduleByDayTable extends Component {
                 <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
                 <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-                <TableRowColumn className="schedule4">+</TableRowColumn>
+                <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="jumat" &&
@@ -147,7 +149,7 @@ class ScheduleByDayTable extends Component {
                 <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
                 <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-                <TableRowColumn className="schedule4">+</TableRowColumn>
+                <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="sabtu" &&
@@ -156,7 +158,7 @@ class ScheduleByDayTable extends Component {
                 <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
                 <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-                <TableRowColumn className="schedule4">+</TableRowColumn>
+                <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
         </TableBody>

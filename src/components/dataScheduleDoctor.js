@@ -10,6 +10,8 @@ import {
 import FontIcon from 'material-ui/FontIcon';
 import '../img/flaticon.css';
 import '../App.css'
+import AddIcon from 'material-ui/svg-icons/content/add-box'
+import { blue500, red500, blue50, green300, green400, green500 } from 'material-ui/styles/colors';
 const drA = [
     {
         hari: 'Senin',
@@ -92,49 +94,49 @@ class ScheduleByDoctorTable extends Component {
           displayRowCheckbox={false}
           stripedRows={true}
           selectable={false}>
-          {this.props.name=="drA" &&
+          {this.props.name=="dr. Alice" &&
           drA.map( (row, index) => (
             <TableRow key={index+1}>
               <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
               <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-              <TableRowColumn className="schedule4">+</TableRowColumn>
+              <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
-          {this.props.name=="drB" &&
+          {this.props.name=="dr. Bob" &&
           drB.map( (row, index) => (
             <TableRow key={index+1}>
                <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
                <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
                <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-               <TableRowColumn className="schedule4">+</TableRowColumn>
+               <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
-          {this.props.name=="drC" &&
+          {this.props.name=="dr. Carol" &&
           drC.map( (row, index) => (
             <TableRow key={index+1}>
               <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
               <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-              <TableRowColumn className="schedule4">+</TableRowColumn>
+              <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
-          {this.props.name=="drD" &&
+          {this.props.name=="dr. Dave" &&
           drD.map( (row, index) => (
             <TableRow key={index+1}>
                 <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
                 <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-                <TableRowColumn className="schedule4">+</TableRowColumn>
+                <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
-          {this.props.name=="drG" &&
+          {this.props.name=="drg. Grace" &&
           drG.map( (row, index) => (
             <TableRow key={index+1}>
                 <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
                 <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
-                <TableRowColumn className="schedule4">+</TableRowColumn>
+                <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
         </TableBody>

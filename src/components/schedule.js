@@ -78,16 +78,16 @@ var forms = {
         <RaisedButton onClick={() => func('byDay')} className="float-left margin-top margin-left" label="Berdasarkan Hari" backgroundColor={greenA200}></RaisedButton>
 				<RaisedButton onClick={() => func('byDoctor')} className="float-right margin-top margin-right" label="Berdasarkan Dokter" backgroundColor={greenA200}></RaisedButton>
         		<br/><br/>
-                <div className="title"><br/>dr. Aaa aaaa aaaaaa</div>
-				<ScheduleByDoctorTable name ="drA"/>
-                <div className="title"><br/>dr. Bbb bbbbb</div>
-                <ScheduleByDoctorTable name ="drB"/>
-                <div className="title"><br/>dr. Cccc cccc</div>
-                <ScheduleByDoctorTable name ="drC"/>
-                <div className="title"><br/>dr. Dddd ddddd</div>
-				<ScheduleByDoctorTable name ="drD"/>
-                <div className="title"><br/>drg. Gggg gggg</div>
-                <ScheduleByDoctorTable name ="drG"/>
+                <div className="title"><br/>dr. Alice</div>
+				<ScheduleByDoctorTable name ="dr. Alice"/>
+                <div className="title"><br/>dr. Bob</div>
+                <ScheduleByDoctorTable name ="dr. Bob"/>
+                <div className="title"><br/>dr. Carol</div>
+                <ScheduleByDoctorTable name ="dr. Carol"/>
+                <div className="title"><br/>dr. Dave</div>
+				<ScheduleByDoctorTable name ="dr. Dave"/>
+                <div className="title"><br/>drg. Grace</div>
+                <ScheduleByDoctorTable name ="drg. Grace"/>
             </div>,
     byDay: <div>
                <RaisedButton onClick={() => func('byDay')} className="float-left margin-top margin-left" label="Berdasarkan Hari" backgroundColor={greenA200}></RaisedButton>
