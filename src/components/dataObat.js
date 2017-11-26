@@ -7,7 +7,9 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+import AddIcon from 'material-ui/svg-icons/content/add-box'
 import FontIcon from 'material-ui/FontIcon';
+import { blue500, red500, blue50, green300, green400, green500 } from 'material-ui/styles/colors';
 import '../img/flaticon.css';
 import '../App.css'
 
@@ -119,7 +121,7 @@ class TableExample extends Component {
             <TableRow key={index+1}>
               <TableRowColumn style={{width:5}} className="first-column">{row.nama}</TableRowColumn>
               <TableRowColumn style={{width:5}} className="fourth-column">{row.harga}</TableRowColumn>
-              <TableRowColumn style={{width:5}} className="fifth-column">+</TableRowColumn>
+              <TableRowColumn style={{width:5}} className="fifth-column"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
         </TableBody>

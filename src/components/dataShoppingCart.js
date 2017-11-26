@@ -8,6 +8,9 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import FontIcon from 'material-ui/FontIcon';
+import AddIcon from 'material-ui/svg-icons/content/add';
+import ClearIcon from 'material-ui/svg-icons/content/clear';
+import { blue500, red500, blue50, green300, green400, green500 } from 'material-ui/styles/colors';
 import '../img/flaticon.css';
 import '../App.css'
 
@@ -79,8 +82,8 @@ class TableShoppingCart extends Component {
               <TableRowColumn className="second-column">{row.nama}</TableRowColumn>
               <TableRowColumn className="third-column">{row.jumlah}</TableRowColumn>
               <TableRowColumn className="fourth-column">{row.harga}</TableRowColumn>
-              <TableRowColumn className="fifth-column">+</TableRowColumn>
-              <TableRowColumn className="sixth-column">-</TableRowColumn>
+              <TableRowColumn className="fifth-column"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
+              <TableRowColumn className="sixth-column"><ClearIcon color={red500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
         </TableBody>
