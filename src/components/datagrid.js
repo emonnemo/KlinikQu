@@ -10,6 +10,9 @@ import {
 import FontIcon from 'material-ui/FontIcon';
 import '../img/flaticon.css';
 import '../App.css'
+import { blue500, red500, blue50, orange500, green300, green400, green500 } from 'material-ui/styles/colors';
+import EditIcon from 'material-ui/svg-icons/image/edit'
+import DeleteIcon from 'material-ui/svg-icons/content/delete-sweep'
 
 const editIcon = <FontIcon className="flaticon-edit-pencil-button orange"></FontIcon>;
 const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
@@ -87,8 +90,8 @@ class TableExampleSimple extends Component {
               <TableRowColumn className="first-column">{index+1}</TableRowColumn>
               <TableRowColumn className="second-column">{row.tanggal}</TableRowColumn>
               <TableRowColumn className="third-column">{row.penyakit}</TableRowColumn>
-              <TableRowColumn className="fourth-column"><span class="glyphicon glyphicon-arrow-down"></span></TableRowColumn>
-              <TableRowColumn className="fifth-column">d</TableRowColumn>
+              <TableRowColumn className="fourth-column"><EditIcon color={orange500} style={{widht : '30', height : '30'}}/></TableRowColumn>
+              <TableRowColumn className="fifth-column"><DeleteIcon color={red500} style={{widht : '30', height : '30'}}/></TableRowColumn>
             </TableRow>
           ))}
         </TableBody>
