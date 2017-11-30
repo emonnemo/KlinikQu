@@ -19,64 +19,77 @@ const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
 const seninData = [
 {
     dokter: 'dr. Alice',
+    jenis: 'dokter anak',
     jam: '08.00-12.00 , 15.00-17.00',
 },
 {
     dokter: 'dr. Bob',
+    jenis: 'dokter umum',
     jam: '13.00-15.00',
 }
 ];
 const selasaData = [
 {
     dokter: 'dr. Alice',
+    jenis: 'dokter anak',
     jam: '08.00-12.00 , 15.00-17.00',
 },
 {
     dokter: 'dr. Bob',
+    jenis: 'dokter umum',
     jam: '15.00-18.00',
 }
 ];
 const rabuData = [
 {
     dokter: 'dr. Alice',
+    jenis: 'dokter anak',
     jam: '12.00-17.00',
 },
 {
     dokter: 'drg. Grace',
+    jenis: 'dokter gigi',
     jam: '16.00-20.00',
 }
 ];
 const kamisData = [
 {
     dokter: 'dr. Bob',
+    jenis: 'dokter umum',
     jam: '08.00-12.00',
 },
 {
     dokter: 'dr. Carol',
+    jenis: 'dokter umum',
     jam: '15.00-20.00',
 }
 ];
 const jumatData = [
 {
     dokter: 'dr. Carol',
+    jenis: 'dokter umum',
     jam: '08.00-12.00',
 },
 {
     dokter: 'drg. Grace',
+    jenis: 'dokter gigi',
     jam: '16.00-20.00',
 },
 {
     dokter: 'dr. Dave',
+    jenis: 'dokter umum',
     jam: '15.00-20.00',
 }
 ];
 const sabtuData = [
 {
     dokter: 'dr. Carol',
+    jenis: 'dokter umum',
     jam: '08.00-12.00',
 },
 {
     dokter: 'dr. Dave',
+    jenis: 'dokter umum',
     jam: '15.00-20.00',
 }
 ];
@@ -110,8 +123,8 @@ class ScheduleByDayTable extends Component {
           {this.props.name=="senin" &&
           seninData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
-              <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
+              <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
+              <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
               <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
@@ -119,8 +132,8 @@ class ScheduleByDayTable extends Component {
           {this.props.name=="selasa" &&
           selasaData.map( (row, index) => (
             <TableRow key={index+1}>
-               <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
-               <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
+               <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
+               <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
                <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
                <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
@@ -128,8 +141,8 @@ class ScheduleByDayTable extends Component {
           {this.props.name=="rabu" &&
           rabuData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
-              <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
+              <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
+              <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
               <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
@@ -137,8 +150,8 @@ class ScheduleByDayTable extends Component {
           {this.props.name=="kamis" &&
           kamisData.map( (row, index) => (
             <TableRow key={index+1}>
-                <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
-                <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
+                <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
+                <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
                 <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
@@ -146,8 +159,8 @@ class ScheduleByDayTable extends Component {
           {this.props.name=="jumat" &&
           jumatData.map( (row, index) => (
             <TableRow key={index+1}>
-                <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
-                <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
+                <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
+                <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
                 <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
@@ -155,8 +168,8 @@ class ScheduleByDayTable extends Component {
           {this.props.name=="sabtu" &&
           sabtuData.map( (row, index) => (
             <TableRow key={index+1}>
-                <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
-                <TableRowColumn className="schedule2">{row.dokter}</TableRowColumn>
+                <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
+                <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
                 <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>

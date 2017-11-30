@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import '../App.css';
 import FontIcon from 'material-ui/FontIcon';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import BottomNavigationExampleSimple from './bottomnavbar.js';
 import AppBarExampleIconButton from './appbar.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ScheduleByDayTable from './dataScheduleDay.js'
 import ScheduleByDoctorTable from './dataScheduleDoctor.js'
-
+import {white,blue500, red500, blue50, green300, greenA200,green400, green500, green100, blue100 } from 'material-ui/styles/colors';
 import TabsExampleControlled from './tab.js'
 import RaisedButton from 'material-ui/RaisedButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
@@ -17,11 +16,11 @@ import DatePicker from 'material-ui/DatePicker';
 import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-
+import FloatingActionButton from 'material-ui/FloatingActionButton';
 
 
 const style = {
-    margin: 12,
+	margin: 12,
   };
   
   var parent = class Parent extends Component {
@@ -72,40 +71,47 @@ var func = function(currentMode) {
 }
 
 
-
 var forms = {
 	byDoctor:	<div>
-        <RaisedButton onClick={() => func('byDay')} className="float-left margin-top margin-left" label="Berdasarkan Hari" backgroundColor={greenA200}></RaisedButton>
-				<RaisedButton onClick={() => func('byDoctor')} className="float-right margin-top margin-right" label="Berdasarkan Dokter" backgroundColor={greenA200}></RaisedButton>
-        		<br/><br/>
-                <div className="title"><br/>dr. Alice</div>
+        		<div className="title">
+					Jadwal Praktik
+				</div>
+        		<RaisedButton onClick={() => func('byDay')}labelStyle={{ fontSize: '12px'}}className="float-left margin-top margin-left" labelColor={white} label="jadwal per hari" backgroundColor={blue500}></RaisedButton>
+				<RaisedButton onClick={() => func('byDoctor')}labelStyle={{ fontSize: '12px'}} className="float-right margin-top margin-right"  labelColor={white} label="jadwal per dokter" backgroundColor={blue500}></RaisedButton>
+        		<br/><br/><br/>
+                <div className="titlesch"><br/>dr. Alice (dokter anak)</div>
 				<ScheduleByDoctorTable name ="dr. Alice"/>
-                <div className="title"><br/>dr. Bob</div>
+                <div className="titlesch"><br/>dr. Bob (dokter umum)</div>
                 <ScheduleByDoctorTable name ="dr. Bob"/>
-                <div className="title"><br/>dr. Carol</div>
+                <div className="titlesch"><br/>dr. Carol (dokter umum)</div>
                 <ScheduleByDoctorTable name ="dr. Carol"/>
-                <div className="title"><br/>dr. Dave</div>
+                <div className="titlesch"><br/>dr. Dave (dokter umum)</div>
 				<ScheduleByDoctorTable name ="dr. Dave"/>
-                <div className="title"><br/>drg. Grace</div>
+                <div className="titlesch"><br/>drg. Grace (dokter gigi)</div>
                 <ScheduleByDoctorTable name ="drg. Grace"/>
+				
             </div>,
     byDay: <div>
-               <RaisedButton onClick={() => func('byDay')} className="float-left margin-top margin-left" label="Berdasarkan Hari" backgroundColor={greenA200}></RaisedButton>
-			   <RaisedButton onClick={() => func('byDoctor')} className="float-right margin-top margin-right" label="Berdasarkan Dokter" backgroundColor={greenA200}></RaisedButton>
-			   <br/><br/>
-			   <div className="title"><br/>Senin</div>
-			   <ScheduleByDayTable name ="senin"/>
-			   <div className="title"><br/>Selasa</div>
-			   <ScheduleByDayTable name ="selasa"/>
-			   <div className="title"><br/>Rabu</div>
-			   <ScheduleByDayTable name ="rabu"/>
-			   <div className="title"><br/>Kamis</div>
-			   <ScheduleByDayTable name ="kamis"/>
-			   <div className="title"><br/>Jumat</div>
-			   <ScheduleByDayTable name ="jumat"/>
-			   <div className="title"><br/>Sabtu</div>
-			   <ScheduleByDayTable name ="sabtu"/>
-				</div>
+			<div className="title">
+				Jadwal Praktik
+			</div>
+			<RaisedButton onClick={() => func('byDay')} labelStyle={{ fontSize: '12px'}} style={style} className="float-left margin-top margin-left" labelColor={white} label="jadwal per hari" backgroundColor={blue500}></RaisedButton>
+			<RaisedButton onClick={() => func('byDoctor')} labelStyle={{ fontSize: '12px'}} style={style}  className="float-right margin-top margin-right"  labelColor={white} label="jadwal per dokter" backgroundColor={blue500}></RaisedButton>
+			<br/><br/><br/>
+			<div className="titlesch"><br/>Senin</div>
+			<ScheduleByDayTable name ="senin"/>
+			<div className="titlesch"><br/>Selasa</div>
+			<ScheduleByDayTable name ="selasa"/>
+			<div className="titlesch"><br/>Rabu</div>
+			<ScheduleByDayTable name ="rabu"/>
+			<div className="titlesch"><br/>Kamis</div>
+			<ScheduleByDayTable name ="kamis"/>
+			<div className="titlesch"><br/>Jumat</div>
+			<ScheduleByDayTable name ="jumat"/>
+			<div className="titlesch"><br/>Sabtu</div>
+			<ScheduleByDayTable name ="sabtu"/>
+				
+			</div>
 }
 
 export default tab;

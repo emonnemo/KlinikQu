@@ -97,7 +97,6 @@ class ScheduleByDoctorTable extends Component {
           {this.props.name=="dr. Alice" &&
           drA.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
               <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
               <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
@@ -106,7 +105,6 @@ class ScheduleByDoctorTable extends Component {
           {this.props.name=="dr. Bob" &&
           drB.map( (row, index) => (
             <TableRow key={index+1}>
-               <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
                <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
                <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
                <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
@@ -115,7 +113,7 @@ class ScheduleByDoctorTable extends Component {
           {this.props.name=="dr. Carol" &&
           drC.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
+
               <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
               <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
@@ -124,7 +122,7 @@ class ScheduleByDoctorTable extends Component {
           {this.props.name=="dr. Dave" &&
           drD.map( (row, index) => (
             <TableRow key={index+1}>
-                <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
+
                 <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
                 <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
@@ -133,7 +131,7 @@ class ScheduleByDoctorTable extends Component {
           {this.props.name=="drg. Grace" &&
           drG.map( (row, index) => (
             <TableRow key={index+1}>
-                <TableRowColumn className="schedule1">{index+1}</TableRowColumn>
+
                 <TableRowColumn className="schedule2">{row.hari}</TableRowColumn>
                 <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
                 <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
