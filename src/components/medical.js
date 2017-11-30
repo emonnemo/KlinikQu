@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import '../img/flaticon.css';
 import FontIcon from 'material-ui/FontIcon';
 import { blue500, red500, blue50, green300, green400, green500 } from 'material-ui/styles/colors';
 import BottomNavigationExampleSimple from './bottomnavbar.js';
@@ -16,7 +17,7 @@ import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
-import DropDownMenuOpenImmediateExample from './dropmenu.js'
+import DropDownMenuOpenImmediateExample from './dropmenu.js';
 
 const style = {
   margin: 12,
@@ -88,7 +89,7 @@ var forms = {
 				</div>
 				<div>
 					<TableExampleSimple/>
-					<FloatingActionButton onClick={() => func('filterRecord')} className="float-left margin-top margin-left" backgroundColor={green500}><Filter/></FloatingActionButton>
+					<FloatingActionButton onClick={() => func('filterRecord')} className="float-left margin-top margin-left" backgroundColor={green500}><FontIcon className='flaticon-funnel'></FontIcon></FloatingActionButton>
 					<FloatingActionButton onClick={() => func('addRecord')} className="float-right margin-top margin-right" backgroundColor={blue500}><ContentAdd/></FloatingActionButton>
             	</div>
             	</div>,
