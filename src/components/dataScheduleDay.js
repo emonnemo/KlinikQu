@@ -99,7 +99,9 @@ const sabtuData = [
  * A simple table demonstrating the hierarchy of the `Table` component and its sub-components.
  */
 
-
+var padding = {
+    padding:"10px",
+}
 
 class ScheduleByDayTable extends Component {
     constructor(props) {
@@ -108,6 +110,7 @@ class ScheduleByDayTable extends Component {
   render() {
     return (
       <Table
+      
         fixedHeader={true}
         fixedFooter={true}
         onCellClick={this.editDelete}>
@@ -123,54 +126,54 @@ class ScheduleByDayTable extends Component {
           {this.props.name=="senin" &&
           seninData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
-              <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
-              <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
+              <TableRowColumn style={padding} className="schedule1">{row.dokter}</TableRowColumn>
+              <TableRowColumn style={padding} className="schedule2">{row.jenis}</TableRowColumn>
+              <TableRowColumn style={padding} className="schedule3">{row.jam}</TableRowColumn>
               <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="selasa" &&
           selasaData.map( (row, index) => (
             <TableRow key={index+1}>
-               <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
-               <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
-               <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
+               <TableRowColumn style={padding} className="schedule1">{row.dokter}</TableRowColumn>
+               <TableRowColumn style={padding} className="schedule2">{row.jenis}</TableRowColumn>
+               <TableRowColumn style={padding} className="schedule3">{row.jam}</TableRowColumn>
                <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="rabu" &&
           rabuData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
-              <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
-              <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
+              <TableRowColumn style={padding} className="schedule1">{row.dokter}</TableRowColumn>
+              <TableRowColumn style={padding} className="schedule2">{row.jenis}</TableRowColumn>
+              <TableRowColumn style={padding} className="schedule3">{row.jam}</TableRowColumn>
               <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="kamis" &&
           kamisData.map( (row, index) => (
             <TableRow key={index+1}>
-                <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
-                <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
-                <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule1">{row.dokter}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule2">{row.jenis}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule3">{row.jam}</TableRowColumn>
                 <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="jumat" &&
           jumatData.map( (row, index) => (
             <TableRow key={index+1}>
-                <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
-                <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
-                <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule1">{row.dokter}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule2">{row.jenis}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule3">{row.jam}</TableRowColumn>
                 <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}
           {this.props.name=="sabtu" &&
           sabtuData.map( (row, index) => (
             <TableRow key={index+1}>
-                <TableRowColumn className="schedule1">{row.dokter}</TableRowColumn>
-                <TableRowColumn className="schedule2">{row.jenis}</TableRowColumn>
-                <TableRowColumn className="schedule3">{row.jam}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule1">{row.dokter}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule2">{row.jenis}</TableRowColumn>
+                <TableRowColumn style={padding} className="schedule3">{row.jam}</TableRowColumn>
                 <TableRowColumn className="schedule4"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}

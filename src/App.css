@@ -117,15 +117,19 @@
 
 .schedule1 {
   width:20%;
+text-align: center;
 }
 .schedule2 {
   width:25%;
+  text-align: center;
 }
 .schedule3 {
   width:40%;
+  text-align: center;
 }
 .schedule4 {
   width:15%;
+  text-align: center;
 }
 
 .scheduleShowBy {
