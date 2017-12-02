@@ -54,7 +54,8 @@ class TableShoppingCart extends Component {
   render() {
     return (
       <Table
-        height={250}
+        height={200}
+        width={150}
         fixedHeader={true}
         fixedFooter={true}
         onCellClick={this.editDelete}
@@ -65,10 +66,9 @@ class TableShoppingCart extends Component {
           selectable={false}>
           <TableRow>
             <TableHeaderColumn className="first-column">No</TableHeaderColumn>
-            <TableHeaderColumn className="second-column">Nama Obat</TableHeaderColumn>
-            <TableHeaderColumn className="third-column">Jumlah</TableHeaderColumn>
+            <TableHeaderColumn className="second-column">Obat</TableHeaderColumn>
+            <TableHeaderColumn className="third-column">Jmlh</TableHeaderColumn>
             <TableHeaderColumn className="fourth-column">Harga</TableHeaderColumn>
-            <TableHeaderColumn className="fifth-column"></TableHeaderColumn>
             <TableHeaderColumn className="sixth-column"></TableHeaderColumn>
           </TableRow>
         </TableHeader>
@@ -82,7 +82,6 @@ class TableShoppingCart extends Component {
               <TableRowColumn className="second-column">{row.nama}</TableRowColumn>
               <TableRowColumn className="third-column">{row.jumlah}</TableRowColumn>
               <TableRowColumn className="fourth-column">{row.harga}</TableRowColumn>
-              <TableRowColumn className="fifth-column"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
               <TableRowColumn className="sixth-column"><ClearIcon color={red500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>
           ))}

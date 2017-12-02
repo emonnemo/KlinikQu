@@ -72,8 +72,41 @@ class TableExample extends Component {
   editDelete(row, column) {
     if (column == '2') {
       //eslint-disable-next-line
-      if (confirm('Tambahkan ke dalam keranjang?')) {
-        alert('Obat berhasil ditambahkan');
+      if (row == '0') {
+        //eslint-disable-next-line
+        if (confirm('Tambahkan Obat A ke dalam keranjang?')) {
+          alert('Obat A berhasil ditambahkan');
+        }
+      } else if (row == '1') {
+        //eslint-disable-next-line
+        if (confirm('Tambahkan Obat B ke dalam keranjang?')) {
+          alert('Obat B berhasil ditambahkan');
+        }
+      } else if (row == '2') {
+        //eslint-disable-next-line
+        if (confirm('Tambahkan Obat C ke dalam keranjang?')) {
+          alert('Obat C berhasil ditambahkan');
+        }
+      } else if (row == '3') {
+        //eslint-disable-next-line
+        if (confirm('Tambahkan Obat D ke dalam keranjang?')) {
+          alert('Obat D berhasil ditambahkan');
+        }
+      } else if (row == '4') {
+        //eslint-disable-next-line
+        if (confirm('Tambahkan Obat E ke dalam keranjang?')) {
+          alert('Obat E berhasil ditambahkan');
+        }
+      } else if (row == '5') {
+        //eslint-disable-next-line
+        if (confirm('Tambahkan Obat F ke dalam keranjang?')) {
+          alert('Obat F berhasil ditambahkan');
+        }
+      } else if (row == '6') {
+        //eslint-disable-next-line
+        if (confirm('Tambahkan Obat G ke dalam keranjang?')) {
+          alert('Obat G berhasil ditambahkan');
+        }
       }
     } else if (column == '0') {
       if (row == '0') {
@@ -119,7 +152,7 @@ class TableExample extends Component {
           style={{tableLayout: 'auto'}}>
           {tableData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn style={{width:5}} className="first-column">{row.nama}</TableRowColumn>
+              <TableRowColumn style={{width:5, textDecoration:'underline'}} className="first-column">{row.nama}</TableRowColumn>
               <TableRowColumn style={{width:5}} className="fourth-column">{row.harga}</TableRowColumn>
               <TableRowColumn style={{width:5}} className="fifth-column"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>

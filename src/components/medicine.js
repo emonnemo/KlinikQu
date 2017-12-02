@@ -91,7 +91,7 @@ var forms = {
 				</div>
 				<div>
 					<TableExample/>
-					<FloatingActionButton onClick={() => func('filterObat')} className="float-left margin-top margin-left" backgroundColor={greenA200}><Filter/></FloatingActionButton>
+					<FloatingActionButton onClick={() => func('filterObat')} className="float-left margin-top margin-left" backgroundColor={green500}><FontIcon className='flaticon-funnel'></FontIcon></FloatingActionButton>
 					<FloatingActionButton onClick={() => func('shoppingCartView')} className="float-right margin-top margin-right" backgroundColor={blue500}><ShoppingCart/></FloatingActionButton>
             	</div>
             	</div>,
