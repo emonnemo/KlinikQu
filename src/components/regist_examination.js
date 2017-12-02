@@ -10,6 +10,7 @@ import DatePicker from 'material-ui/DatePicker';
 import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import moment from 'moment';
 import {
   Table,
   TableBody,
@@ -19,14 +20,15 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import Examination from './dataExamination.js';
+import Exam from './dataExam.js';
 
 class Register extends Component {
   constructor(props) {
     super(props);
-    window.view = forms['view_examination'];
+    window.view = forms['view_examination_default'];
     this.state = {
       value: 1,
-      view: forms['view_examination']
+      view: forms['view_examination_default']
     };
     this.handleChange = this.handleChange.bind(this);
     window.handleChange = this.handleChange;
@@ -62,7 +64,7 @@ var changeOption = (val) => {
 }
 
 var forms = {
-  view_examination:
+  view_examination_default:
     <div style={{ margin: 'auto' }}>
       <div className="title">
 			  <br/>
@@ -70,13 +72,20 @@ var forms = {
 			</div>
       <br />
       <RaisedButton className="addButton float-left margin-left margin-top padding-bottom" onClick={() => changePage('register')} labelStyle={{fontWeight : 'bold', marginBottom : '10px'}} label="Add" labelPosition="after" icon={<AddIcon color={green400} style={{widht : '36', height : '36'}}/>}></RaisedButton>
+    </div>,
+  view_examination:
+    <div style={{ margin: 'auto' }}>
+      <div className="title">
+        <br />
+        Pendaftaran Pemeriksaan
+			</div>
+      <br />
+      <RaisedButton className="addButton float-left margin-left margin-top padding-bottom" onClick={() => changePage('register')} labelStyle={{ fontWeight: 'bold', marginBottom: '10px' }} label="Add" labelPosition="after" icon={<AddIcon color={green400} style={{ widht: '36', height: '36' }} />}></RaisedButton>
       <br />
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <Examination/>
+      <Exam />
     </div>,
   register:
     <div style={{ margin: 'auto' }}>
@@ -91,119 +100,34 @@ var forms = {
       <div className='margin-left margin-right'>
         <table>
           <tr>
-            <td>Tanggal Periksa : </td>
-            <td><DatePicker autoOk='true' container='dialog' hintText="Tanggal Record" /></td>
+            <td>Tanggal Periksa</td>
+            <td>:</td>
+            <td><DatePicker autoOk='true' container='dialog' minDate={new Date()} formatDate={(date) => moment(date).format("DD-MM-YYYY")} hintText="Tanggal Record" /></td>
           </tr>
           <tr>
-            <td>Dokter : </td>
-            <DropDownMenu value={1} onChange={this.handleChange}>
-              <MenuItem value={1} primaryText="Dokter A" />
-              <MenuItem value={2} primaryText="Dokter B" />
-              <MenuItem value={3} primaryText="Dokter C" />
-            </DropDownMenu>
+            <td>Dokter</td>
+            <td>:</td>
+            <td>
+              <DropDownMenu value={1} onChange={this.handleChange}>
+                <MenuItem value={1} primaryText="dr. Alice" />
+                <MenuItem value={2} primaryText="dr. Bob" />
+                <MenuItem value={3} primaryText="dr. Carol" />
+                <MenuItem value={4} primaryText="dr. Dave" />
+                <MenuItem value={5} primaryText="drg. Grace" />
+              </DropDownMenu>
+            </td>
           </tr>
           <tr>
-            <td>Keluhan Awal : </td>
-            <td><TextField multiLine={true} rows='3'/></td>
+            <td>Keluhan Awal</td>
+            <td>:</td>
+            <td><TextField style={{border: '2px solid', borderColor: '#4cb7c5'}} multiLine={true} rows='3'/></td>
           </tr>
         </table>
       </div>
       <br />
       <br />
-      <RaisedButton label="Kembali" onClick={() => changePage('view_examination')} backgroundColor={red500} className="float-left margin-left margin-bottom"/>
+      <RaisedButton label="Kembali" onClick={() => changePage('view_examination_default')} backgroundColor={red500} className="float-left margin-left margin-bottom"/>
       <RaisedButton label="Submit" onClick={() => changePage('view_examination')} backgroundColor={green500} className="float-right margin-right margin-bottom" />
-    </div>,
-  queue_info1:
-    <div style={{ margin: 'auto' }}>
-      <div className="title">
-        <br />
-        Pendaftaran Pemeriksaan
-			</div>
-      <br />
-      <div className="section float-left margin-left" style={{ fontSize: '16pt' }}>Pilih Jadwal</div>
-      <br />
-      <br />
-      <div className='margin-left margin-right'>
-        <table>
-          <tr style={{}}>
-            <td>No. Antrian Anda : </td>
-            <td>20</td>
-          </tr>
-          <br />
-          <br />
-          <tr>
-            <td>No. Antrian Sekarang : </td>
-            <td>16</td>
-          </tr>
-          <br />
-          <br />
-          <tr>
-            <td>Sisa Waktu Antrian : </td>
-            <td>25 menit</td>
-          </tr>
-          <br />
-          <br />
-          <tr>
-            <td>Nama Dokter : </td>
-            <td>Dr. A</td>
-          </tr>
-          <br />
-          <br />
-          <tr>
-            <td>Tanggal Periksa : </td>
-            <td>30/10/2017</td>
-          </tr>
-        </table>
-        <br />
-        <br />
-        <RaisedButton label="Kembali" onClick={() => changePage('view_examination')} backgroundColor={red500} className="float-left margin-left margin-bottom" />
-      </div>
-    </div>,
-  queue_info2:
-    <div style={{ margin: 'auto' }}>
-      <div className="title">
-        <br />
-        Pendaftaran Pemeriksaan
-			</div>
-      <br />
-      <div className="section float-left margin-left" style={{ fontSize: '16pt' }}>Pilih Jadwal</div>
-      <br />
-      <br />
-      <div className='margin-left margin-right'>
-        <table>
-          <tr style={{}}>
-            <td>No. Antrian Anda : </td>
-            <td>10</td>
-          </tr>
-          <br />
-          <br />
-          <tr>
-            <td>No. Antrian Sekarang : </td>
-            <td>0</td>
-          </tr>
-          <br />
-          <br />
-          <tr>
-            <td>Sisa Waktu Antrian : </td>
-            <td>50 menit</td>
-          </tr>
-          <br />
-          <br />
-          <tr>
-            <td>Nama Dokter : </td>
-            <td>Dr. B</td>
-          </tr>
-          <br />
-          <br />
-          <tr>
-            <td>Tanggal Periksa : </td>
-            <td>13/11/2017</td>
-          </tr>
-        </table>
-        <br />
-        <br />
-        <RaisedButton label="Kembali" onClick={() => changePage('view_examination')} backgroundColor={red500} className="float-left margin-left margin-bottom" />
-      </div>
     </div>
 }
 
