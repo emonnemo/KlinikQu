@@ -41,11 +41,6 @@ class TableShoppingCart extends Component {
   editDelete(row, column) {
     if (column == '4') {
       //eslint-disable-next-line
-      if (confirm('Tambahkan jumlah obat ke dalam keranjang?')) {
-        alert('Obat berhasil ditambahkan');
-      }
-    } else if (column == '5') {
-      //eslint-disable-next-line
       if (confirm('Kurangi jumlah obat dalam keranjang?')) {
         alert('Obat berhasil dikurangkan');
       }
