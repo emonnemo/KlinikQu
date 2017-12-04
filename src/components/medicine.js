@@ -74,7 +74,7 @@ var func = function(currentMode) {
 
 var fillDeliveryInfo = function(currentMode) {
 	window.handleMedicineChange(currentMode);
-	alert('Pesanan Anda Berhasil Didaftarkan!');
+	alert('Pesanan Anda Berhasil Didaftarkan!\n Total Biaya: Rp 135,000\n Pengiriman akan tiba dalam 60 menit');
 }
 
 var editRecord = function(currentMode) {

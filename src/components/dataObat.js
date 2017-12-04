@@ -12,6 +12,7 @@ import FontIcon from 'material-ui/FontIcon';
 import { blue500, red500, blue50, green300, green400, green500 } from 'material-ui/styles/colors';
 import '../img/flaticon.css';
 import '../App.css'
+import Modal from './modal.js';
 
 const editIcon = <FontIcon className="flaticon-edit-pencil-button orange"></FontIcon>;
 const deleteIcon = <FontIcon className="flaticon-trash red"></FontIcon>;
@@ -68,15 +69,22 @@ const tableData = [
 class TableExample extends Component {
   constructor(props) {
     super(props);
+    this.state = { isOpen: true };
+  }
+  setModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
   editDelete(row, column) {
     if (column == '2') {
       //eslint-disable-next-line
       if (row == '0') {
-        //eslint-disable-next-line
+        // eslint-disable-next-line
         if (confirm('Tambahkan Obat A ke dalam keranjang?')) {
           alert('Obat A berhasil ditambahkan');
         }
+
       } else if (row == '1') {
         //eslint-disable-next-line
         if (confirm('Tambahkan Obat B ke dalam keranjang?')) {
@@ -129,7 +137,7 @@ class TableExample extends Component {
   render() {
     return (
       <Table
-        height={250}
+        height={200}
         width={200}
         fixedHeader={true}
         fixedFooter={true}
@@ -152,7 +160,7 @@ class TableExample extends Component {
           style={{tableLayout: 'auto'}}>
           {tableData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn style={{width:5, textDecoration:'underline'}} className="first-column">{row.nama}</TableRowColumn>
+              <TableRowColumn style={{width:5, textDecoration:'underline'}} className="first-column"><span onClick={this.setModal}>{row.nama}</span></TableRowColumn>
               <TableRowColumn style={{width:5}} className="fourth-column">{row.harga}</TableRowColumn>
               <TableRowColumn style={{width:5}} className="fifth-column"><AddIcon color={green500} style={{widht : '50', height : '50'}}/></TableRowColumn>
             </TableRow>

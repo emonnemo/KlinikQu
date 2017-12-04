@@ -8,7 +8,7 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import FontIcon from 'material-ui/FontIcon';
-import AddIcon from 'material-ui/svg-icons/content/add';
+import AddIcon from 'material-ui/svg-icons/content/add-box'
 import ClearIcon from 'material-ui/svg-icons/content/clear';
 import { blue500, red500, blue50, green300, green400, green500 } from 'material-ui/styles/colors';
 import '../img/flaticon.css';
@@ -26,7 +26,7 @@ const tableData = [
 {
   nama: 'Obat B',
   jumlah: '2',
-  harga: 'Rp. 100,000',
+  harga: 'Rp. 10,000',
 },
 ];
 
@@ -44,13 +44,18 @@ class TableShoppingCart extends Component {
       if (confirm('Kurangi jumlah obat dalam keranjang?')) {
         alert('Obat berhasil dikurangkan');
       }
+    } else if (column == '3') {
+      //eslint-disable-next-line
+      if (confirm('Tambahkan jumlah obat dalam keranjang?')) {
+        alert('Obat berhasil ditambahkan');
+      }
     }
   }
   render() {
     return (
       <Table
         height={200}
-        width={150}
+        width={100}
         fixedHeader={true}
         fixedFooter={true}
         onCellClick={this.editDelete}
@@ -60,10 +65,10 @@ class TableShoppingCart extends Component {
           adjustForCheckbox={false}
           selectable={false}>
           <TableRow>
-            <TableHeaderColumn className="first-column">No</TableHeaderColumn>
-            <TableHeaderColumn className="second-column">Obat</TableHeaderColumn>
-            <TableHeaderColumn className="third-column">Jmlh</TableHeaderColumn>
-            <TableHeaderColumn className="fourth-column">Harga</TableHeaderColumn>
+            <TableHeaderColumn className="first-column">Obat</TableHeaderColumn>
+            <TableHeaderColumn className="second-column">Jml</TableHeaderColumn>
+            <TableHeaderColumn className="third-column">Harga</TableHeaderColumn>
+            <TableHeaderColumn className="fourth-column"></TableHeaderColumn>
             <TableHeaderColumn className="sixth-column"></TableHeaderColumn>
           </TableRow>
         </TableHeader>
@@ -73,11 +78,11 @@ class TableShoppingCart extends Component {
           selectable={false}>
           {tableData.map( (row, index) => (
             <TableRow key={index+1}>
-              <TableRowColumn className="first-column">{index+1}</TableRowColumn>
-              <TableRowColumn className="second-column">{row.nama}</TableRowColumn>
-              <TableRowColumn className="third-column">{row.jumlah}</TableRowColumn>
-              <TableRowColumn className="fourth-column">{row.harga}</TableRowColumn>
-              <TableRowColumn className="sixth-column"><ClearIcon color={red500} style={{widht : '50', height : '50'}}/></TableRowColumn>
+              <TableRowColumn className="first-column">{row.nama}</TableRowColumn>
+              <TableRowColumn className="second-column">{row.jumlah}</TableRowColumn>
+              <TableRowColumn className="third-column">{row.harga}</TableRowColumn>
+              <TableRowColumn className="fourth-column" style={{width:3}}><AddIcon color={green500} style={{widht : '30', height : '30'}}/></TableRowColumn>
+              <TableRowColumn className="sixth-column"  style={{width:3}}><ClearIcon color={red500} style={{widht : '30', height : '30'}}/></TableRowColumn>
             </TableRow>
           ))}
         </TableBody>
